@@ -1,11 +1,11 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "NOMBRE DE LA RED";
-const char* password = "CONTRASEÑA";
+const char* ssid = "INFINITUMD80E_2.4";
+const char* password = "uADQZq7ZAQ";
 
 //Your Domain name with URL path or IP address with path
-String serverName = "https://api.sunrise-sunset.org/json";
+String serverName = "http://192.168.1.75:5000";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -39,8 +39,8 @@ void loop() {
     //Check WiFi connection status
     if(WiFi.status()== WL_CONNECTED){
       HTTPClient http;
-
-      String serverPath = serverName + "?lat=36.7201600&lng=-4.4203400";  // values of latitude and longitude for quering
+      // 23.731147, -99.075174
+      String serverPath = serverName;  // values of latitude and longitude for quering
       
       // Your Domain name with URL path or IP address with path
       http.begin(serverPath.c_str());
